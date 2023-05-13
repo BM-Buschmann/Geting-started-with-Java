@@ -1,4 +1,4 @@
-public class App {
+public class HelloWorld {
     public static void main(String[] args) throws Exception {
         System.out.println("Hallo, Loerrach");
         System.out.println(3);
