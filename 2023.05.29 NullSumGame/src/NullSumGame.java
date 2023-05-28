@@ -21,7 +21,6 @@
 
 import java.util.Scanner;
 
-
 public class NullSumGame {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -52,16 +51,16 @@ public class NullSumGame {
                 playerA.updateMoney(-1);
             }
         }
-
+        
         // Determine the winner
         Player winner = playerA.canPlay() ? playerA : playerB;
         Player loser = playerA.canPlay() ? playerB : playerA;
-
+        
         // Print the winner and the win ratio
         System.out.println("Winner: Player " + (playerA.canPlay() ? "A" : "B"));
         double winRatio = (double) winner.getWinCount() / loser.getWinCount();
         System.out.printf("Win Ratio (A:B): %.2f%n", winRatio);
-
+        
         scanner.close();
     }
 }
