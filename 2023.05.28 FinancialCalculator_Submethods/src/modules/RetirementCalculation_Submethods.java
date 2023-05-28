@@ -1,3 +1,4 @@
+package modules;
 /**    
 *    File: e:\OneDrive\University\1. Fächer\2. Semester\9. Informatik II\Java Code\2023.05.28 FinancialCalculator\src\RetirementCalculation.java
 *    Project: e:\OneDrive\University\1. Fächer\2. Semester\9. Informatik II\Java Code\2023.05.28 FinancialCalculator\src
@@ -15,6 +16,8 @@
 *    HISTORY:
 *    Date      	By	Comments
 *    ----------	---	----------------------------------------------------------
+*    2023-05-28	BM  Refactored the code to consolidate the prompt for user inputs into a unified sub-method, improving code organization.	
+*    2023-05-28	BM  Modularized most actions by sorting and grouping operation steps, enhancing code clarity and maintainability.
 */    
 
 
@@ -27,24 +30,20 @@ import java.util.Scanner;
 /**
  * This program calculates the retirement duration based on initial capital, interest rate, and annual withdrawal.
  */
-public class RetirementCalculation {
+public class RetirementCalculation_Submethods {
     /**
      * @param scanner       the scanner object for user input
      */
     public static void main(Scanner scanner) {        
-        System.out.print("Initial Capital: ");
-        double capital = scanner.nextDouble();
+        double capital = promptForInput(scanner, "Initial capital");        
+        double interestRate = promptForInput(scanner, "Interest Rate");
         
-        System.out.print("Interest Rate: ");
-        double interestRate = scanner.nextDouble();
-        
-        double withdrawal;
         boolean validWithdrawal = false;
         
         // Prompt the user for annual withdrawal until a valid value is entered
         while (!validWithdrawal) {
-            System.out.print("Annual Withdrawal: ");
-            withdrawal = scanner.nextDouble();
+            double withdrawal = promptForInput(scanner, "Annual Withdrawal");
+
             
             // Check if the withdrawal amount is greater than the product of initial capital and interest rate
             if (withdrawal > capital * interestRate) {
@@ -55,7 +54,17 @@ public class RetirementCalculation {
             }
         }
     }
-    
+    /**
+     * Prompts the user to enter a numeric input value.
+     * 
+     * @param scanner the Scanner object for input
+     * @param prompt the prompt message
+     * @return the numeric value entered by the user
+     */
+    private static double promptForInput(Scanner scanner, String prompt) {
+        System.out.print(prompt + ": ");
+        return scanner.nextDouble();
+    }
     /**
      * Calculates the retirement duration based on initial capital, interest rate, and annual withdrawal.
      * 

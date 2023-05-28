@@ -15,19 +15,19 @@
 *    HISTORY:
 *    Date      	By	Comments
 *    ----------	---	----------------------------------------------------------
+*    2023-05-28	BM  Reorganized module sub-associations from indirect imports to explicit imports.	
 */    
-
-
-
-
 
 
 import java.util.Scanner;
 
+import modules.CompoundInterestCalculation_Submethods;
+import modules.RetirementCalculation_Submethods;
+
 /**
  * This class represents the main application.
  */
-public class App {
+public class FinancialCalculator_Submethods {
     /**
      * The main entry point of the application.
      *
@@ -51,10 +51,10 @@ public class App {
             
             switch (selection) {
                 case 1:
-                    CompoundInterestCalculation.main(scanner);
+                    CompoundInterestCalculation_Submethods.main(scanner);
                     break;
                 case 2:
-                    RetirementCalculation.main(scanner);
+                    RetirementCalculation_Submethods.main(scanner);
                     break;
                 default:
                     System.out.println("Invalid selection.");

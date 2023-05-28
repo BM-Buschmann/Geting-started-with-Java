@@ -1,3 +1,4 @@
+package modules;
 /**    
 *    File: e:\OneDrive\University\1. Fächer\2. Semester\9. Informatik II\Java Code\2023.05.28 FinancialCalculator\src\CompoundInterestCalculation.java
 *    Project: e:\OneDrive\University\1. Fächer\2. Semester\9. Informatik II\Java Code\2023.05.28 FinancialCalculator\src
@@ -15,7 +16,8 @@
 *    HISTORY:
 *    Date      	By	Comments
 *    ----------	---	----------------------------------------------------------
-*    2023-05-28	BM  Modulised most actions into sub methods by sourting grouping opperation steps	
+*    2023-05-28	BM  Refactored the code to consolidate the prompt for user inputs into a unified sub-method, improving code organization. As a tradeoff, the value of the investment period now needs to be cast to a int.	
+*    2023-05-28	BM  Modularized most actions by sorting and grouping operation steps, enhancing code clarity and maintainability.	
 */    
 
 
@@ -28,52 +30,27 @@ import java.util.Scanner;
 /**
  * This program calculates compound interest.
  */
-public class CompoundInterestCalculation {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
+public class CompoundInterestCalculation_Submethods {
+    public static void main(Scanner scanner) {        
         // Prompt the user for input values
-        double capital = promptForInitialCapital(scanner);
-        double interestRate = promptForInterestRate(scanner);
-        int investmentPeriod = promptForInvestmentPeriod(scanner);
+        double capital = promptForInput(scanner, "Initial capital");
+        double interestRate = promptForInput(scanner, "Interest rate");
+        int investmentPeriod = (int)promptForInput(scanner, "Investment period (years)");
         
         // Calculate and display compound interest
         calculateCompoundInterest(capital, interestRate, investmentPeriod);
-        
-        scanner.close();
     }
     
     /**
-     * Prompts the user to enter the initial capital.
+     * Prompts the user to enter a numeric input value.
      * 
      * @param scanner the Scanner object for input
-     * @return the initial capital entered by the user
+     * @param prompt the prompt message
+     * @return the numeric value entered by the user
      */
-    public static double promptForInitialCapital(Scanner scanner) {
-        System.out.print("Initial capital: ");
+    private static double promptForInput(Scanner scanner, String prompt) {
+        System.out.print(prompt + ": ");
         return scanner.nextDouble();
-    }
-    
-    /**
-     * Prompts the user to enter the interest rate.
-     * 
-     * @param scanner the Scanner object for input
-     * @return the interest rate entered by the user
-     */
-    public static double promptForInterestRate(Scanner scanner) {
-        System.out.print("Interest rate: ");
-        return scanner.nextDouble();
-    }
-    
-    /**
-     * Prompts the user to enter the investment period in years.
-     * 
-     * @param scanner the Scanner object for input
-     * @return the investment period entered by the user
-     */
-    public static int promptForInvestmentPeriod(Scanner scanner) {
-        System.out.print("Investment period (years): ");
-        return scanner.nextInt();
     }
     
     /**
@@ -83,7 +60,7 @@ public class CompoundInterestCalculation {
      * @param interestRate the interest rate
      * @param investmentPeriod the investment period in years
      */
-    public static void calculateCompoundInterest(double capital, double interestRate, int investmentPeriod) {
+    private static void calculateCompoundInterest(double capital, double interestRate, int investmentPeriod) {
         int year;
         for (year = 1; year <= investmentPeriod; year++) {
             // Calculate the new capital after one year using compound interest formula
@@ -108,6 +85,7 @@ public class CompoundInterestCalculation {
         return Math.round(value * 100.0) / 100.0;
     }
 }
+
 
 
 

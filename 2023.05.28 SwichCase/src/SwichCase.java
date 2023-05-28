@@ -32,7 +32,7 @@ import java.util.Scanner;
  * It would result in executing the code of all subsequent cases until a break statement is encountered or the end of the switch block is reached.
  * 
  */
-public class App {
+public class SwichCase {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         char continueInput;
