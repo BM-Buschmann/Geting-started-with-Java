@@ -31,7 +31,8 @@ import java.util.Scanner;
  * This program calculates compound interest.
  */
 public class CompoundInterestCalculation_Submethods {
-    public static void main(Scanner scanner) {        
+    public static void main(Scanner scanner) {
+        clearScreen();        
         // Prompt the user for input values
         double capital = promptForInput(scanner, "Initial capital");
         double interestRate = promptForInput(scanner, "Interest rate");
@@ -39,6 +40,30 @@ public class CompoundInterestCalculation_Submethods {
         
         // Calculate and display compound interest
         calculateCompoundInterest(capital, interestRate, investmentPeriod);
+    }
+    
+    /**
+     * Calculates and displays compound interest for each year of the investment period.
+     * 
+     * @param capital the initial capital
+     * @param interestRate the interest rate
+     * @param investmentPeriod the investment period in years
+     */
+    private static void calculateCompoundInterest(double capital, double interestRate, int investmentPeriod) {
+        int year;
+        System.out.println("\n\n");
+        for (year = 1; year <= investmentPeriod; year++) {
+            // Calculate the new capital after one year using compound interest formula
+            capital += capital * interestRate;
+            
+            // Display the capital after each year
+            // System.out.println("\n" + "Capital after year " + year + ": " + roundToTwoDecimalPlaces(capital)); // comment this out as i assume the calculation steps are irrelevant to the user
+        }
+        
+        // Display the total duration until the capital is depleted
+        year--;
+        clearScreen();
+        System.out.println("The capital after year " + year + ": " + roundToTwoDecimalPlaces(capital) + "\n\n");
     }
     
     /**
@@ -52,29 +77,7 @@ public class CompoundInterestCalculation_Submethods {
         System.out.print(prompt + ": ");
         return scanner.nextDouble();
     }
-    
     /**
-     * Calculates and displays compound interest for each year of the investment period.
-     * 
-     * @param capital the initial capital
-     * @param interestRate the interest rate
-     * @param investmentPeriod the investment period in years
-     */
-    private static void calculateCompoundInterest(double capital, double interestRate, int investmentPeriod) {
-        int year;
-        for (year = 1; year <= investmentPeriod; year++) {
-            // Calculate the new capital after one year using compound interest formula
-            capital += capital * interestRate;
-            
-            // Display the capital after each year
-            System.out.println("Capital after year " + year + ": " + roundToTwoDecimalPlaces(capital));
-        }
-        
-        // Display the total duration until the capital is depleted
-        year--;
-        System.out.println("The capital after year " + year + ": " + roundToTwoDecimalPlaces(capital));
-    }
-    
     /**
      * Rounds a double value to two decimal places.
      * 
@@ -84,6 +87,16 @@ public class CompoundInterestCalculation_Submethods {
     private static double roundToTwoDecimalPlaces(double value) {
         return Math.round(value * 100.0) / 100.0;
     }
+    
+    /**
+     * Scrolls to the top of the terminal.
+     */
+    private static void clearScreen() {
+        // Prints multiple newline characters to clear the screen
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
 }
 
 

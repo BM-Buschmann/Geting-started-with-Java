@@ -42,13 +42,13 @@ public class FinancialCalculator_Submethods {
         boolean startOver = true;
         
         while (startOver) {
+            clearScreen();
             System.out.println("Which class do you want to execute?");
             System.out.println("1. CompoundInterestCalculation");
             System.out.println("2. RetirementCalculation");
             System.out.print("Enter the corresponding number: ");
             
             int selection = scanner.nextInt();
-            
             switch (selection) {
                 case 1:
                     CompoundInterestCalculation_Submethods.main(scanner);
@@ -60,7 +60,6 @@ public class FinancialCalculator_Submethods {
                     System.out.println("Invalid selection.");
                     break;
             }
-            
             System.out.print("Do you want to start over? (Y/N): ");
             String answer = scanner.next();
             
@@ -70,5 +69,10 @@ public class FinancialCalculator_Submethods {
         }
         
         scanner.close();
+    }
+    private static void clearScreen() {
+        // Prints multiple newline characters to clear the screen
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 }
