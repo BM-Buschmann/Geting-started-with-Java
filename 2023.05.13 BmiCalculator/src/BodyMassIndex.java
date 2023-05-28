@@ -1,4 +1,29 @@
+/**    
+*    File: e:\OneDrive\University\1. Fächer\2. Semester\9. Informatik II\Java Code\2023.05.13 BmiCalculator\src\BodyMassIndex.java
+*    Project: e:\OneDrive\University\1. Fächer\2. Semester\9. Informatik II\Java Code\2023.05.13 BmiCalculator\src
+*    Created Date: Saturday, May 13th 2023, 11:29:41 am
+*    Author: Björn Metzger
+*    -----
+*    Last Modified: Sun May 28 2023
+*    Modified By: Björn Metzger
+*    -----
+*    Copyright (c) 2023 Desma.Africa
+*    
+*    MIT License
+*    For more information, please refer to the Licence File included in the root folder.
+*    -----
+*    HISTORY:
+*    Date      	By	Comments
+*    ----------	---	----------------------------------------------------------
+*/    
+
+
+
+
+
+
 import java.util.Scanner;
+
 
 /**
  * The BodyMassIndex class calculates and displays the Body Mass Index (BMI) based on user input for height and weight.
