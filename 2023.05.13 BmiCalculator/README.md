@@ -22,36 +22,28 @@ Programm zur Berechnung des Body Mass Index (BMI) Übung 1:
   - Gestalten Sie die Ausgaben des Programms ansprechender, indem Sie Rundungen verwenden oder Unterstreichungen, Leerzeilen usw. einfügen.
 
 
-(English)
----
-Task Tescription
----
+## (English)
+# Task Tescription
+Body Mass Index (BMI) Calculation Program Exercise 1:
 
-## Body Mass Index (BMI) Calculation Program Exercise 1:
-
-# Setting up the Project
-- Create a new Eclipse project named "BMI".
-- Copy the "IO.java" file into your project as a physical copy.
-- Verify that a corresponding project folder has been created on your drive.
-
-# Adding the "BodyMassIndex" Class with Main Method
-- Create a class called "BodyMassIndex" with a main method.
-- Declare double variables for height [m] and weight [kg], and assign them values.
-- Calculate the BMI using the formula: double bmi = weight / (height * height).
-- Output the calculated value: IO.writeln("Value = " + bmi).
-
-# Setting Target Values
-- The calculated BMI value should be within the range of 20 to 26.
-
-# User Input of Values
-- Instead of hard-coding the numeric values in the program, use the IO.promptAndReadDouble("Please enter ...: ") method from the IO class to ask the user for the numbers during program execution.
-
-# Asking for User's Name
-- Use the IO.promptAndReadString("Please enter your name: ") method from the IO class to prompt the user for their name.
-- Output a greeting that includes the user's name before querying for the values.
-
-# Improving Program Output
-Enhance the program's output by using rounding, underlines, empty lines, etc.
+1. Setting up the Project
+  - Create a new Eclipse project named "BMI".
+  - Copy the "IO.java" file into your project as a physical copy.
+  - Verify that a corresponding project folder has been created on your drive.
+2. Adding the "BodyMassIndex" Class with Main Method
+  - Create a class called "BodyMassIndex" with a main method.
+  - Declare double variables for height [m] and weight [kg], and assign them values.
+  - Calculate the BMI using the formula: double bmi = weight / (height * height).
+  - Output the calculated value: IO.writeln("Value = " + bmi).
+3. Setting Target Values
+  - The calculated BMI value should be within the range of 20 to 26.
+4. User Input of Values
+  - Instead of hard-coding the numeric values in the program, use the IO.promptAndReadDouble("Please enter ...: ") method from the IO class to ask the user for the numbers during program execution.
+5. Asking for User's Name
+  - Use the IO.promptAndReadString("Please enter your name: ") method from the IO class to prompt the user for their name.
+  - Output a greeting that includes the user's name before querying for the values.
+6. Improving Program Output
+  - Enhance the program's output by using rounding, underlines, empty lines, etc.
 
 
 
