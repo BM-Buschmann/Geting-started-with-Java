@@ -12,7 +12,7 @@ Aufgabenstellung:
     1. Es sollen zwei Klassen angelegt werden:
         - Die nichtausführbare Klasse "**Spieler**"
         - Die ausführbare Klasse "**Spiel**" (mit main-Methode)
-
+    
     1. Klasse "Spieler":
         1. Private Attribute:
            - **geld:** Das aktuelle Kapital des Spielers
